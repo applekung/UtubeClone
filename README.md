@@ -12,7 +12,7 @@
     formData전체를 돌면서 쿼리스트링 추가해주고 싶은경우는 navigate보다 setSearchParams가 적합
     setSearchParams({ search_query: search })
 
-### 방법2.
+### 방법2. new URLSearchParams(location.search)
 
     useLocation()의 location.search와 new URLSearchParams() 동시에 사용해서 loaction.search 문자열을 직접 파싱해 URLSearchParams()객체 가져오는 방법
     const location = useLocation()

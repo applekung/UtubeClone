@@ -5,7 +5,7 @@ import SearchBar from './SearchBar'
 export default function Header() {
   return (
     <div className="flex justify-between">
-      <Link to={'/'}>
+      <Link to="/">
         <Logo />
       </Link>
       <SearchBar />

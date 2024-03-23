@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import RoutingError from './pages/RoutingError.jsx'
-import VideoList from './pages/VideoList.jsx'
-import VideoDetail from './pages/VideoDetail.jsx'
+import App from './App'
+import './index.css'
+import RoutingError from './pages/RoutingError'
+import VideoList from './pages/VideoList'
+import VideoDetail from './pages/VideoDetail'
 
 const router = createBrowserRouter([
   {
