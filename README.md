@@ -1,6 +1,6 @@
 # 유튜브API를 이용한 클론웹
 
-### 주요기능
+### 이번 프로젝트로 배운점
 
 ## 모달 (Modal with Potal)
 
@@ -25,7 +25,17 @@
     console.log(searchParams.get('search_query'))
     -> 방법1이 더 간편하고 setSearchParams도 사용 가능해서 방법1 사용이 좋음
 
-## 방법3 useNavigate()
+### 방법3 useNavigate()
 
     주소 자체를 바꿔주고 싶은경우에 적합. 이 웹은 '/'와 '/videos'둘다 VideoList컴포넌트를 보여주고 있어서 navigate를 사용
     navigate(`/videos?search_query=${encodedSearch}`)
+
+## eslint PROBLEMS 고치기
+
+    지금까지는 eslint problems를 주로 무시했는데 처음으로 다 고쳐봤다. (아직 프로젝트 진행중이지만)
+    tanstck의 DOCS의 devtool 부분을 보니
+    "plugin:@tanstack/eslint-plugin-query/recommended" 사용을 권장해서
+    extends에 추가했다.
+    그리고 지금까지 계속 module.exports형식으로 쓰던 eslint configure를 json으로 바꾸고
+    pakage.json에 type="module"을 추가해줬다.
+    앞으로는 lint PROBLEMS를 잘 보고 고쳐야겠다.

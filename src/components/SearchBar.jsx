@@ -20,8 +20,9 @@ export default function SearchBar() {
     방법1. useSearchParams()
     현재주소에서 search_query만 바꿔주고 싶은 경우
     formData전체를 돌면서 쿼리스트링 추가해주고 싶은경우는 navigate보다 setSearchParams가 적합
-    // setSearchParams({ search_query: search })
-
+    // if (search) {
+       setSearchParams({ search_query: search });
+      }
     방법2.
     useLocation()과 URLSearchParams동시에 사용해서 loaction.search문자열을 직접 파싱해 URLSearchParams()객체 가져옴
     const location = useLocation()
@@ -35,7 +36,12 @@ export default function SearchBar() {
     */
 
     // 주소 자체를 바꿔주고 싶은경우 이 웹은 '/'와 '/videos'둘다 VideoList컴포넌트를 보여주고 있어서 navigate를 사용
-    navigate(`/videos?search_query=${encodedSearch}`)
+
+    if (search) {
+      navigate(`/videos?search_query=${encodedSearch}`)
+    } else {
+      navigate('/')
+    }
   }
 
   const handleChange = (e) => {
