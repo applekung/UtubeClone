@@ -2,7 +2,28 @@
 
 ### 이번 프로젝트로 배운점
 
-## 모달 (Modal with Potal)
+## axios
+
+### axios의 instance만들어 config정의
+
+### axios의 instance활용
+
+    export const setAuthToken = (token) => {
+      if (token) {
+        instance.defaults.headers.common['Authorization'] = token
+      } else {
+        delete instance.defaults.headers.common['Authorization']
+      }
+    }
+    등 함수를 만들어 로그인, 로그아웃 시 활용 가능
+
+### axios의 intercept
+
+    잘모르겠지만 이해한 바로는
+    request의 intercept는 endpoint로의 actual call 전에 실행
+    response의 intercept는 Promise가 completed 되기 전, then문에서 data 받아서 가공하기 전에 실행
+    request intercept는 header에 토큰이 있는지('Authorization') 확인하거나, 토큰이 만료되었는지 확인할떄,
+    response intercept는 access token이 만료되었을경우 새로 받은 access token으로 대체하는 로직, 에러시 fallback이미지를 보여주는 로직 등 에 활용하는 듯 한데 잘 모르겠다.
 
 ## 검색시 주소창에서 쿼리를 바꾸는 방법
 
