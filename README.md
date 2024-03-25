@@ -2,6 +2,8 @@
 
 ### 이번 프로젝트로 배운점
 
+## useInfiniteQuery 페이지네이션
+
 ## axios
 
 ### axios의 instance만들어 config정의
