@@ -11,10 +11,11 @@ const instance = axios.create({
 
 export default instance
 
+// instance 활용방법 확인용 작성
 export const setAuthToken = (token) => {
   if (token) {
-    instance.defaults.headers.common['Authorization'] = token
+    instance.defaults.headers.common.Authorization = token
   } else {
-    delete instance.defaults.headers.common['Authorization']
+    delete instance.defaults.headers.common.Authorization
   }
 }

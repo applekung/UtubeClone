@@ -1,4 +1,4 @@
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+import { useInfiniteQuery } from '@tanstack/react-query'
 import { Fragment, useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import VideoCard from '../components/VideoCard'
@@ -57,7 +57,7 @@ export default function VideoList() {
             </div>
           </Fragment>
         ))}
-      <div className="h-40 w-40 bg-pink-300" ref={intersectRef} />
+      <div className="h-40 w-40 bg-transparent" ref={intersectRef} />
     </>
   )
 }

@@ -1,13 +1,14 @@
 import { useLocation } from 'react-router-dom'
-import ChannelInfo from '../components/ChannelInfo'
 import { decode } from 'html-entities'
+import ChannelInfo from '../components/ChannelInfo'
 
 export default function VideoDetail() {
   const {
     state: { video },
   } = useLocation()
-  console.log(video)
+
   const { title, description, channelId, channelTitle } = video.snippet
+
   return (
     <section>
       <iframe
@@ -18,8 +19,8 @@ export default function VideoDetail() {
         height="640"
         src={`http://www.youtube.com/embed/${video.id.videoId}`}
       />
-      <div>
-        <h2>{decode(title)}</h2>
+      <div className="p-8">
+        <h2 className="text-lg font-semibold">{decode(title)}</h2>
         <ChannelInfo id={channelId} title={channelTitle} />
         <pre>{description}</pre>
       </div>

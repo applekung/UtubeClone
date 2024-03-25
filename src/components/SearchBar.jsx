@@ -5,7 +5,6 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 export default function SearchBar() {
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
-  // const [searchParams, setSearchParams] = useSearchParams()
   const [searchParams] = useSearchParams()
 
   useEffect(() => {
@@ -18,11 +17,15 @@ export default function SearchBar() {
     /* 
     NOTE 
     방법1. useSearchParams()
-    현재주소에서 search_query만 바꿔주고 싶은 경우
+    
+    현재주소에서 search_query만 바꿔주고 싶은 경우, 
     formData전체를 돌면서 쿼리스트링 추가해주고 싶은경우는 navigate보다 setSearchParams가 적합
-    // if (search) {
+    // 
+    const [searchParams, setSearchParams] = useSearchParams()
+    if (search) {
        setSearchParams({ search_query: search });
-      }
+    }
+    
     방법2.
     useLocation()과 URLSearchParams동시에 사용해서 loaction.search문자열을 직접 파싱해 URLSearchParams()객체 가져옴
     const location = useLocation()
